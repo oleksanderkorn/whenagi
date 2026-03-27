@@ -121,6 +121,13 @@ h1 {
   width: 100%;
 }
 
+.answer-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
 .answer {
   margin: 0;
   font-family: "Syne", sans-serif;
@@ -134,8 +141,15 @@ h1 {
   white-space: nowrap;
 }
 
-.answer.is-hidden {
+.answer-group.is-hidden {
   opacity: 0;
+}
+
+.answer-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 .actions {
@@ -211,6 +225,10 @@ h1 {
     white-space: normal;
   }
 
+  .answer-group {
+    align-items: center;
+  }
+
   .actions {
     justify-content: center;
   }
@@ -261,6 +279,11 @@ h1 {
     text-align: center;
     text-wrap: balance;
     white-space: normal;
+  }
+
+  .answer-note {
+    font-size: 0.76rem;
+    text-align: center;
   }
 
   .actions {
