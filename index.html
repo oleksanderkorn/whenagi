@@ -48,9 +48,59 @@
     </script>
   </head>
   <body>
-    <!-- source: https://github.com/oleksanderkorn -->
-    <!-- noone reads it -->
     <div class="frame">
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch color theme"
+        aria-pressed="false"
+      >
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-thumb">
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M12 4.75a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V5.5a.75.75 0 0 1 .75-.75Zm0 11.25a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Zm0 3.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V20a.75.75 0 0 1 .75-.75ZM5.5 11.25a.75.75 0 0 1 0 1.5H4a.75.75 0 0 1 0-1.5h1.5Zm16 0a.75.75 0 0 1 0 1.5H20a.75.75 0 0 1 0-1.5h1.5ZM7.05 7.05a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.06L7.05 8.11a.75.75 0 0 1 0-1.06Zm8.78 8.78a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06Zm2.12-8.78a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Zm-8.78 8.78a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Z"
+              />
+            </svg>
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M14.72 3.78a.75.75 0 0 1 .2 1.03 7.25 7.25 0 0 0 6.87 10.8.75.75 0 0 1 .55 1.32A9.25 9.25 0 1 1 13.4 2.98a.75.75 0 0 1 1.32.8Z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+
+      <a
+        class="code-link"
+        href="https://github.com/oleksanderkorn/whenagi"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="View source code on GitHub"
+      >
+        <svg
+          class="code-link-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M12 2C6.477 2 2 6.596 2 12.264c0 4.534 2.865 8.38 6.839 9.737.5.095.683-.223.683-.496 0-.245-.009-.894-.014-1.755-2.782.619-3.369-1.37-3.369-1.37-.455-1.184-1.11-1.499-1.11-1.499-.908-.636.069-.623.069-.623 1.004.072 1.532 1.059 1.532 1.059.892 1.568 2.341 1.115 2.91.852.091-.664.349-1.115.635-1.372-2.22-.259-4.555-1.14-4.555-5.074 0-1.121.389-2.037 1.029-2.755-.103-.26-.446-1.304.098-2.719 0 0 .839-.276 2.75 1.052A9.303 9.303 0 0 1 12 6.61c.85.004 1.705.118 2.504.347 1.909-1.328 2.747-1.052 2.747-1.052.546 1.415.203 2.459.1 2.719.641.718 1.028 1.634 1.028 2.755 0 3.944-2.339 4.812-4.566 5.066.359.321.679.954.679 1.922 0 1.387-.012 2.507-.012 2.849 0 .275.18.596.688.495C19.138 20.64 22 16.796 22 12.264 22 6.596 17.523 2 12 2Z"
+          />
+        </svg>
+      </a>
+
       <div class="wash wash-left" aria-hidden="true"></div>
       <div class="wash wash-right" aria-hidden="true"></div>
       <div class="rule rule-top" aria-hidden="true"></div>

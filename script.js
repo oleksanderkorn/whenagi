@@ -2,6 +2,9 @@ const answer = document.querySelector("#answer");
 const answerNote = document.querySelector("#answer-note");
 const answerGroup = document.querySelector("#answer-group");
 const cta = document.querySelector("#cta");
+const themeToggle = document.querySelector("#theme-toggle");
+
+const THEME_KEY = "whenagi-theme";
 
 const affirmations = [
   "YES",
@@ -31,6 +34,16 @@ const answerNotes = [
 
 let previousAffirmationIndex = -1;
 let previousNoteIndex = -1;
+
+const setTheme = (theme) => {
+  document.body.dataset.theme = theme;
+  themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+};
+
+const storedTheme = localStorage.getItem(THEME_KEY);
+const preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+setTheme(storedTheme || (preferredDark ? "dark" : "light"));
 
 const pickNextIndex = (items, previousIndex) => {
   if (items.length === 1) {
@@ -65,3 +78,9 @@ const reaffirm = () => {
 };
 
 cta.addEventListener("click", reaffirm);
+
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(nextTheme);
+  localStorage.setItem(THEME_KEY, nextTheme);
+});
