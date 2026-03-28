@@ -3,6 +3,7 @@ const answerNote = document.querySelector("#answer-note");
 const answerGroup = document.querySelector("#answer-group");
 const cta = document.querySelector("#cta");
 const themeToggle = document.querySelector("#theme-toggle");
+const codeLink = document.querySelector(".code-link");
 
 const THEME_KEY = "whenagi-theme";
 
@@ -59,7 +60,16 @@ const pickNextIndex = (items, previousIndex) => {
   return nextIndex;
 };
 
+const trackEvent = (path, title) => {
+  window.goatcounter?.count({
+    path,
+    title,
+    event: true,
+  });
+};
+
 const reaffirm = () => {
+  const isFirstReveal = cta.textContent === "Reveal";
   const affirmationIndex = pickNextIndex(affirmations, previousAffirmationIndex);
   const noteIndex = pickNextIndex(answerNotes, previousNoteIndex);
 
@@ -75,6 +85,11 @@ const reaffirm = () => {
   requestAnimationFrame(() => {
     answerGroup.classList.add("is-refreshing");
   });
+
+  trackEvent(
+    isFirstReveal ? "reveal-first" : "reveal-repeat",
+    isFirstReveal ? "First Reveal" : "Repeat Reveal"
+  );
 };
 
 cta.addEventListener("click", reaffirm);
@@ -83,4 +98,9 @@ themeToggle.addEventListener("click", () => {
   const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
   setTheme(nextTheme);
   localStorage.setItem(THEME_KEY, nextTheme);
+  trackEvent(`theme-${nextTheme}`, `Theme: ${nextTheme}`);
+});
+
+codeLink?.addEventListener("click", () => {
+  trackEvent("github-click", "GitHub Click");
 });
